@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>My Blog</title>
+    <link rel="stylesheet" media="all" href="../layui/css/layui.css">
+    <link rel="stylesheet" media="all" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" media="all" href="../css/app.css">
+</head>
+
+<body class="body-background">
+    <!--头部导航栏-->
+    <div class="blog-header layui-bg-black">
+        <div class="layui-container">
+            <a class="blog-logo" href="#">
+                <h2>泡泡堂</h2>
+            </a>
+            <ul class="layui-nav blog-nav layui-hide-xs">
+                <li class="layui-nav-item layui-this">
+                    <a href="/">
+                        <i class="layui-icon">&#xe705;</i>文章
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/">
+                        <i class="layui-icon">&#xe6b2;</i>问答
+                    </a>
+                </li>
+            </ul>
+
+            <div class="blog-nav-right">
+                <div class="blog-search layui-hide-xs">
+                    <form method="get" action="/">
+                        <input type="text" name="q" placeholder="搜索...">
+                        <button class="search-btn" type="submit">
+                            <i class="layui-icon">&#xe615;</i>
+                        </button>
+                    </form>
+                </div>
+
+                <ul class="layui-nav blog-nav-user layui-hide">
+                    <li class="layui-nav-item">
+                        <a class="user_publish" href="">
+                            <i class="layui-icon" style="margin-right: 6px;">&#xe609;</i>发布
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">写文章</a></dd>
+                            <dd><a href="javascript:;">提问题</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="">
+                            <img src="http://q.qlogo.cn/qqapp/101235792/2F99DEAD78830C4B058FA9F597A50FAC/100" class="layui-nav-img"
+                            style="width: 35px;height: 35px;">
+                            ITHTT
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">修改资料</a></dd>
+                            <dd><a href="javascript:;">个人中心</a></dd>
+                            <dd><a href="javascript:;">退出登录</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+                <ul class="blog-nav-user">
+                    <li><a href="../page/login.html" class="signin">登录</a></li>
+                    <li><span class="or">or</span></li>
+                    <li><a href="../page/register.html" class="signup">注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--内容部分-->
+    <div class="layui-container blog-content">
+        <div class="layui-row layui-col-space15">
+            <!--左侧内容区域-->
+            <div class="layui-col-md8">
+                <div class="blog-panel">
+                    <div class="blog-panel-title blog-filter">
+                        <a href="" class="layui-this">最新的</a>
+                        <span class="blog-mid"></span>
+                        <a href="">热门的</a>
+                    </div>
+                    <div class="blog-panel-main">
+                        <!--内容列表-->
+                        <ul id="content-list">
+                            <!--<div class="article-list-item" id="loop-15766">-->
+                                <!--<div class="article-item-head layui-clear layui-hide-xs">-->
+                                    <!--<div class="user">-->
+                                        <!--<a href="/ta/2">-->
+                                            <!--<div class="profile-photo">-->
+                                                <!--<img class="img-circle" src="http://q.qlogo.cn/qqapp/101235792/2F99DEAD78830C4B058FA9F597A50FAC/100"/>-->
+                                            <!--</div>-->
+                                            <!--<div class="info">-->
+                                                <!--<strong>小城故事</strong>-->
+                                                <!--<time>2017-09-09</time>-->
+                                                <!--<time>15小时前</time>-->
+                                            <!--</div>-->
+                                        <!--</a>-->
+                                    <!--</div>-->
+                                    <!--<div class="count">-->
+                                        <!--<span class="act"><i class="icon icon-eye-open"></i>0</span>-->
+                                        <!--<span class="act"><i class="icon icon-heart-empty"></i>0</span>-->
+                                        <!--<span class="act"><i class="icon icon-comment-alt"></i>0</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="article-item-summary">-->
+                                    <!--<a href="/view/15766">-->
+                                        <!--<div class="title">-->
+                                            <!--<span class="blog-label blog-label-success">文</span>-->
+                                            <!--<h2>一眼识破</h2></div>-->
+                                        <!--<div class="brief">　　江峰正在公路上设卡，他和同事们全副武装，要抓捕刚刚抢劫了珠宝店的大盗。　　远处缓缓地开过来一辆轿车，停在了路障前。车内坐着一男一女，两人很亲密，看上去是一对情侣。江峰愣了一下，他让二人出示了相关证件，这时候车里的男人说：“我和女朋... </div>-->
+                                    <!--</a>-->
+                                    <!--&lt;!&ndash;前端图片显示样式&ndash;&gt;-->
+                                    <!--<div class="article-item-foot layui-clear">-->
+                                        <!--<ul class="tags">-->
+                                            <!--<li>-->
+                                                <!--<a class="tag tag-sm" href="/tag/民间故事/">民间故事</a>-->
+                                            <!--</li>-->
+                                            <!--<li>-->
+                                                <!--<a class="tag tag-sm" href="/tag/精彩首页/">精彩首页</a>-->
+                                            <!--</li>-->
+                                        <!--</ul>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--右侧内容区域-->
+            <div class="layui-col-md4">
+                <div class="blog-panel">
+                    <div class="blog-panel-title">
+                        <i class="layui-icon" style="margin-right: 10px;">&#xe613;</i>热门用户
+                    </div>
+                    <div class="blog-panel-main">
+
+                    </div>
+                </div>
+
+                <div class="blog-panel">
+                    <div class="blog-panel-title">
+                        <i class="layui-icon" style="margin-right: 10px;">&#xe64c;</i>热门标签
+                    </div>
+                    <div class="blog-panel-main">
+
+                    </div>
+                </div>
+
+                <div class="blog-panel">
+                    <div class="blog-panel-title">
+                        <i class="layui-icon" style="margin-right: 10px;">&#xe621;</i>热门文章
+                    </div>
+                    <div class="blog-panel-main">
+
+                    </div>
+                </div>
+
+                <div class="blog-panel">
+                    <div class="blog-panel-title">
+                        <i class="layui-icon" style="margin-right: 10px;">&#xe609;</i>最新发布
+                    </div>
+                    <div class="blog-panel-main">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.use(['element','flow'],function () {
+            var flow_load = layui.flow;
+            flow_load.load(
+                {
+                    elem: '#content-list',
+                    isAuto: false,
+                    done: function (page, next) {
+                        setTimeout(function(){
+                            var lis = [];
+                            for(var i = 0; i < 10; i++){
+                                lis.push('<div class="article-list-item">'+
+                                              '<div class="article-item-head layui-clear layui-hide-xs">'+
+                                                    '<div class="user">'+
+                                                         '<a href="/ta/2">'+
+                                                            '<div class="profile-photo">'+
+                                                                  '<img class="img-circle" src="http://q.qlogo.cn/qqapp/101235792/2F99DEAD78830C4B058FA9F597A50FAC/100"/>'+
+                                                            '</div>'+
+                                                            '<div class="info">'+
+                                                                  '<strong>小城故事</strong>'+
+                                                                  '<time>2017-09-09</time>'+
+                                                                  '<time>15小时前</time>'+
+                                                            '</div>'+
+                                                         '</a>'+
+                                                    '</div>'+
+                                                    '<div class="count">'+
+                                                         '<span class="act"><i class="icon icon-eye-open"></i>0</span>'+
+                                                         '<span class="act"><i class="icon icon-heart-empty"></i>0</span>'+
+                                                         '<span class="act"><i class="icon icon-comment-alt"></i>0</span>'+
+                                                    ' </div>'+
+                                              '</div>'+
+                                              '<div class="article-item-summary">'+
+                                                  '<a href="/view/15766">'+
+                                                      '<div class="title">'+
+                                                           '<span class="blog-label blog-label-success">文</span>'+
+                                                           '<h2>一眼识破</h2>'+
+                                                      '</div>'+
+                                                      '<div class="brief">　　江峰正在公路上设卡，他和同事们全副武装，要抓捕刚刚抢劫了珠宝店的大盗。　　远处缓缓地开过来一辆轿车，停在了路障前。车内坐着一男一女，两人很亲密，看上去是一对情侣。江峰愣了一下，他让二人出示了相关证件，这时候车里的男人说：“我和女朋... </div>\n' +
+                                        '              '+
+                                                  '</a>'+
+                                              '</div>'+
+                                              '<div class="article-item-foot layui-clear">'+
+                                                    ' <ul class="tags">'+
+                                                         '<li>'+
+                                                            '<a class="tag tag-sm" href="/tag/民间故事/">民间故事</a>' +
+                                                          '</li>'+
+                                                         '<li>' +
+                                                            '<a class="tag tag-sm" href="/tag/精彩首页/">精彩首页</a>'+
+                                                         '</li>'+
+                                                    '</ul>'+
+                                              '</div>'+
+                                    '</div>');
+                            }
+                            next(lis.join(''), page < 0); //假设总页数为 10
+                        }, 500);
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
